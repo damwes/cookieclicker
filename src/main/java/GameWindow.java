@@ -30,8 +30,6 @@ class GameWindow {
     }
 
     private void setWindowToScreenCenter(JFrame frame) {
-        // window.setLocationRelativeTo(null);
-        // temporário para desenvolvimento:
-        frame.setLocation(922, 51);
+        this.frame.setLocationRelativeTo(null);
     }
 }
