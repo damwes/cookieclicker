@@ -67,12 +67,9 @@ class CookieButton {
         ScheduledExecutorService executorService =
             Executors.newSingleThreadScheduledExecutor();
 
-        Runnable command = new Runnable() {
-            @Override
-            public void run() {
-                iconSize -= 20;
-                setIcon();
-            }
+        Runnable command = () -> {
+            iconSize -= 20;
+            setIcon();
         };
 
         executorService.schedule(command, 100, TimeUnit.MILLISECONDS);
