@@ -1,22 +1,22 @@
 import javax.swing.JButton;
 
-class ResetButton {
-
-    private JButton button = new JButton("Reset Game");
+class ResetButton extends JButton {
 
     public ResetButton(CookieCounter counter) {
+        super("Reset Game");
+
         this.setButtonBounds();
 
-        this.button.addActionListener(e -> {
+        this.addActionListener(e -> {
             counter.resetCounter();
         });
     }
 
     public JButton getButtonComponent() {
-        return this.button;
+        return this;
     }
 
     private void setButtonBounds() {
-        this.button.setBounds(0, 64, 160, 24);
+        this.setBounds(0, 64, 160, 24);
     }
 }

@@ -5,9 +5,7 @@ import java.util.concurrent.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
-class CookieButton {
-
-    private JButton button = new JButton();
+class CookieButton extends JButton {
 
     private int buttonSize = 250;
     private int iconSize = 200;
@@ -16,14 +14,14 @@ class CookieButton {
         this.setButtonBounds(windowSize);
         this.setIcon();
 
-        this.button.addActionListener(e -> {
+        this.addActionListener(e -> {
             counter.setCounter();
             dispatchClickAnimation();
         });
     }
 
     public JButton getButtonComponent() {
-        return this.button;
+        return this;
     }
 
     private int getButtonPosition(int windowSize) {
@@ -47,12 +45,12 @@ class CookieButton {
             Image.SCALE_SMOOTH
         );
 
-        this.button.setIcon(new ImageIcon(icon));
-        this.button.setBorder(null);
+        this.setIcon(new ImageIcon(icon));
+        this.setBorder(null);
     }
 
     private void setButtonBounds(int windowSize) {
-        this.button.setBounds(
+        this.setBounds(
             this.getButtonPosition(windowSize),
             this.getButtonPosition(windowSize),
             this.buttonSize,

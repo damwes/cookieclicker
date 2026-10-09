@@ -1,28 +1,26 @@
 import java.awt.Color;
 import javax.swing.JFrame;
 
-class GameWindow {
+class GameWindow extends JFrame {
 
     private int WINDOW_SIZE = 500;
 
-    private JFrame frame = new JFrame();
-
     public GameWindow() {
-        this.frame.setSize(WINDOW_SIZE, WINDOW_SIZE);
-        this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.frame.getContentPane().setBackground(Color.black);
-        this.frame.setAlwaysOnTop(true);
-        this.frame.setLayout(null);
+        this.setSize(WINDOW_SIZE, WINDOW_SIZE);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.getContentPane().setBackground(Color.black);
+        this.setAlwaysOnTop(true);
+        this.setLayout(null);
 
-        this.setWindowToScreenCenter(frame);
+        this.setWindowToScreenCenter(this);
     }
 
     public JFrame getFrame() {
-        return this.frame;
+        return this;
     }
 
     public void setFrameVisible() {
-        this.frame.setVisible(true);
+        this.setVisible(true);
     }
 
     public int getWindowSize() {
@@ -30,6 +28,6 @@ class GameWindow {
     }
 
     private void setWindowToScreenCenter(JFrame frame) {
-        this.frame.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(null);
     }
 }
