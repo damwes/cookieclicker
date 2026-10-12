@@ -1,3 +1,4 @@
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 class ResetButton extends JButton {
@@ -6,6 +7,8 @@ class ResetButton extends JButton {
         super("Reset Game");
 
         this.setButtonBounds();
+        this.setIcon(new ImageIcon("./src/main/resources/reset-game.png"));
+        this.setBorder(null);
 
         this.addActionListener(e -> {
             counter.resetCounter();
@@ -17,6 +20,6 @@ class ResetButton extends JButton {
     }
 
     private void setButtonBounds() {
-        this.setBounds(0, 64, 160, 24);
+        this.setBounds(350, 30, 124, 51);
     }
 }
