@@ -9,14 +9,14 @@ class CookieCounter extends JLabel {
     public CookieCounter(int windowSize) {
         int labelWidth = windowSize;
         int labelHeight = 50;
-        int labelLocationX = 10;
-        int labelLocationY = 10;
+        int labelLocationX = 20;
+        int labelLocationY = 20;
 
         this.setBounds(labelLocationX, labelLocationY, labelWidth, labelHeight);
 
-        this.setFont(new Font(null, Font.PLAIN, 28));
-        this.setForeground(Color.WHITE);
-        this.setText(String.format("%d cookies", counter));
+        this.setFont(new Font(null, Font.BOLD, 28));
+        this.setForeground(Color.RED);
+        this.setText(String.format("%d Cookies", counter));
     }
 
     public JLabel getDisplayComponent() {
@@ -25,11 +25,11 @@ class CookieCounter extends JLabel {
 
     public void setCounter() {
         this.counter++;
-        this.setText(String.format("%d cookies", counter));
+        this.setText(String.format("%d Cookies", counter));
     }
 
     public void resetCounter() {
         this.counter = 0;
-        this.setText(String.format("%d cookies", counter));
+        this.setText(String.format("%d Cookies", counter));
     }
 }
