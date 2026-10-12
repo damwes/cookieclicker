@@ -7,8 +7,8 @@ import javax.swing.*;
 
 class CookieButton extends JButton {
 
-    private int buttonSize = 250;
-    private int iconSize = 200;
+    private int buttonSize = 297;
+    private int iconSize = 250;
 
     public CookieButton(CookieCounter counter, int windowSize) {
         this.setButtonBounds(windowSize);
@@ -52,7 +52,7 @@ class CookieButton extends JButton {
     private void setButtonBounds(int windowSize) {
         this.setBounds(
             this.getButtonPosition(windowSize),
-            this.getButtonPosition(windowSize),
+            this.getButtonPosition(windowSize) + 20,
             this.buttonSize,
             this.buttonSize
         );
