@@ -1,16 +1,23 @@
 import java.awt.Color;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 class GameWindow extends JFrame {
 
     private int WINDOW_SIZE = 500;
 
     public GameWindow() {
+        this.setTitle("Cookie Clicker (@damwes)");
+
         this.setSize(WINDOW_SIZE, WINDOW_SIZE);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.getContentPane().setBackground(Color.black);
         this.setAlwaysOnTop(true);
-        this.setLayout(null);
+
+        this.setContentPane(
+            new JLabel(new ImageIcon("./src/main/resources/bg.png"))
+        );
 
         this.setWindowToScreenCenter(this);
     }
